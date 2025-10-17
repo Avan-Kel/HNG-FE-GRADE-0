@@ -1,0 +1,195 @@
+/* 🌐 Reset defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #222;
+  padding-top: 10px; 
+}
+
+
+/* Profile Card */
+article[data-testid="test-profile-card"] {
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+    align-items: flex-start;
+  gap: 20px;
+  max-width: 700px;
+  width: 90%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+   border: 5px solid purple;
+  border-radius: 30px;
+}
+
+article[data-testid="test-profile-card"]:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive layout */
+@media (min-width: 1000px) {
+  article[data-testid="test-profile-card"] {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Avatar */
+figure {
+  margin: 0;
+  flex-shrink: 0;
+  position: relative;
+  align-self: flex-start; 
+}
+
+figure img[data-testid="test-user-avatar"] {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid transparent;
+  background-image: linear-gradient(45deg, #00c6ff, #0072ff);
+  background-origin: border-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+figure img[data-testid="test-user-avatar"]:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Profile content */
+.profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.comp-border {
+  border: 5px double orange;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+h2[data-testid="test-user-name"] {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p[data-testid="test-user-bio"] {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Time */
+span[data-testid="test-user-time"] {
+  font-size: 0.9rem;
+  color:  purple;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Social links */
+nav ul[data-testid="test-user-social-links"] {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0072ff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #00c6ff;
+  transform: translateY(-2px);
+}
+
+/* Lists for hobbies/dislikes */
+section {
+  margin-top: 12px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+li {
+  margin-bottom: 6px;
+  background: rgba(0, 114, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  background: linear-gradient(90deg, #00c6ff1a, #0072ff1a);
+  transform: translateX(4px);
+  box-shadow: 0 2px 6px rgba(0, 114, 255, 0.2);
+}
+
+/* ✨ Add smooth transitions everywhere */
+a, button, li, img {
+  transition: all 0.3s ease;
+}
